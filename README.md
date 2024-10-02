@@ -190,3 +190,4 @@ Don't forget to leave a star for this project if you found the solution helpful.
 * Render - server side
 * Netlify - client side
 
+# SchoolManagement
