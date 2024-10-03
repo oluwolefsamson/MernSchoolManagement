@@ -191,3 +191,4 @@ Don't forget to leave a star for this project if you found the solution helpful.
 * Netlify - client side
 
 # SchoolManagement
+# MernSchoolManagement
