@@ -18,7 +18,7 @@ export const loginUser = (fields, role) => async (dispatch) => {
 
   try {
     const result = await axios.post(
-      `http://localhost:5000/${role}Login`,
+      `https://mernschoolmanagement.onrender.com/${role}Login`,
       fields,
       {
         headers: { "Content-Type": "application/json" },
