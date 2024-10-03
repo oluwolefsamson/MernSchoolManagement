@@ -120,7 +120,7 @@ export const addStuff = (fields, address) => async (dispatch) => {
 
   try {
     const result = await axios.post(
-      `http://localhost:5000/${address}Create`,
+      `https://mernschoolmanagement.onrender.com/${address}Create`,
       fields,
       {
         headers: { "Content-Type": "application/json" },
