@@ -39,7 +39,7 @@ export const registerUser = (fields, role) => async (dispatch) => {
 
   try {
     const result = await axios.post(
-      `http://localhost:5000/${role}Reg`,
+      `https://mernschoolmanagement.onrender.com/${role}Reg`,
       fields,
       {
         headers: { "Content-Type": "application/json" },
@@ -65,7 +65,9 @@ export const getUserDetails = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`http://localhost:5000/${address}/${id}`);
+    const result = await axios.get(
+      `https://mernschoolmanagement.onrender.com/${address}/${id}`
+    );
     if (result.data) {
       dispatch(doneSuccess(result.data));
     }
@@ -74,25 +76,27 @@ export const getUserDetails = (id, address) => async (dispatch) => {
   }
 };
 
-// export const deleteUser = (id, address) => async (dispatch) => {
-//     dispatch(getRequest());
-
-//     try {
-//         const result = await axios.delete(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`);
-//         if (result.data.message) {
-//             dispatch(getFailed(result.data.message));
-//         } else {
-//             dispatch(getDeleteSuccess());
-//         }
-//     } catch (error) {
-//         dispatch(getError(error));
-//     }
-// }
-
 export const deleteUser = (id, address) => async (dispatch) => {
   dispatch(getRequest());
-  dispatch(getFailed("Sorry the delete function has been disabled for now."));
+
+  try {
+    const result = await axios.delete(
+      `${process.env.REACT_APP_BASE_URL}/${address}/${id}`
+    );
+    if (result.data.message) {
+      dispatch(getFailed(result.data.message));
+    } else {
+      dispatch(getDeleteSuccess());
+    }
+  } catch (error) {
+    dispatch(getError(error));
+  }
 };
+
+// export const deleteUser = (id, address) => async (dispatch) => {
+//   dispatch(getRequest());
+//   dispatch(getFailed("Sorry the delete function has been disabled for now."));
+// };
 
 export const updateUser = (fields, id, address) => async (dispatch) => {
   dispatch(getRequest());

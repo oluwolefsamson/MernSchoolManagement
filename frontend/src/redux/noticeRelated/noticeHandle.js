@@ -6,7 +6,7 @@ export const getAllNotices = (id, address) => async (dispatch) => {
 
   try {
     const result = await axios.get(
-      `http://localhost:5000/${address}List/${id}`
+      `https://mernschoolmanagement.onrender.com/${address}List/${id}`
     );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
