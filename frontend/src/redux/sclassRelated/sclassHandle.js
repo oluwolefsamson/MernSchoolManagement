@@ -11,14 +11,13 @@ import {
   getSubDetailsSuccess,
   getSubDetailsRequest,
 } from "./sclassSlice";
-const REACT_APP_BASE_URL = "http://localhost:5000";
 
 export const getAllSclasses = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
     const result = await axios.get(
-      `${REACT_APP_BASE_URL}/${address}List/${id}`
+      `http://localhost:5000/${address}List/${id}`
     );
     if (result.data.message) {
       dispatch(getFailedTwo(result.data.message));
@@ -35,7 +34,7 @@ export const getClassStudents = (id) => async (dispatch) => {
 
   try {
     const result = await axios.get(
-      `${REACT_APP_BASE_URL}/Sclass/Students/${id}`
+      `http://localhost:5000/Sclass/Students/${id}`
     );
     if (result.data.message) {
       dispatch(getFailedTwo(result.data.message));
@@ -51,7 +50,7 @@ export const getClassDetails = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
+    const result = await axios.get(`http://localhost:5000/${address}/${id}`);
     if (result.data) {
       dispatch(detailsSuccess(result.data));
     }
@@ -64,7 +63,7 @@ export const getSubjectList = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
+    const result = await axios.get(`http://localhost:5000/${address}/${id}`);
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
     } else {
@@ -80,7 +79,7 @@ export const getTeacherFreeClassSubjects = (id) => async (dispatch) => {
 
   try {
     const result = await axios.get(
-      `${REACT_APP_BASE_URL}/FreeSubjectList/${id}`
+      `http://localhost:5000/FreeSubjectList/${id}`
     );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
@@ -96,7 +95,7 @@ export const getSubjectDetails = (id, address) => async (dispatch) => {
   dispatch(getSubDetailsRequest());
 
   try {
-    const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
+    const result = await axios.get(`http://localhost:5000/${address}/${id}`);
     if (result.data) {
       dispatch(getSubDetailsSuccess(result.data));
     }

@@ -7,13 +7,12 @@ import {
   postDone,
   doneSuccess,
 } from "./teacherSlice";
-const REACT_APP_BASE_URL = "http://localhost:5000";
 
 export const getAllTeachers = (id) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`${REACT_APP_BASE_URL}/Teachers/${id}`);
+    const result = await axios.get(`http://localhost:5000/Teachers/${id}`);
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
     } else {
@@ -28,7 +27,7 @@ export const getTeacherDetails = (id) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`${REACT_APP_BASE_URL}/Teacher/${id}`);
+    const result = await axios.get(`http://localhost:5000/Teacher/${id}`);
     if (result.data) {
       dispatch(doneSuccess(result.data));
     }
@@ -43,7 +42,7 @@ export const updateTeachSubject =
 
     try {
       await axios.put(
-        `${REACT_APP_BASE_URL}/TeacherSubject`,
+        `http://localhost:5000/TeacherSubject`,
         { teacherId, teachSubject },
         {
           headers: { "Content-Type": "application/json" },
