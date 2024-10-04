@@ -11,7 +11,9 @@ export const getAllStudents = (id) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(`http://localhost:5000/Students/${id}`);
+    const result = await axios.get(
+      `https://mernschoolmanagement.onrender.com/${id}`
+    );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
     } else {
@@ -28,7 +30,7 @@ export const updateStudentFields =
 
     try {
       const result = await axios.put(
-        `http://localhost:5000/${address}/${id}`,
+        `https://mernschoolmanagement.onrender.com/${address}/${id}`,
         fields,
         {
           headers: { "Content-Type": "application/json" },
@@ -48,7 +50,9 @@ export const removeStuff = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.put(`http://localhost:5000/${address}/${id}`);
+    const result = await axios.put(
+      `https://mernschoolmanagement.onrender.com/${address}/${id}`
+    );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
     } else {
