@@ -188,7 +188,7 @@ Don't forget to leave a star for this project if you found the solution helpful.
 
 # Deployment
 * Render - server side
-* Netlify - client side
+* Vercel - client side
 
 # SchoolManagement
 # MernSchoolManagement
