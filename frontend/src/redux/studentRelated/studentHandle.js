@@ -12,7 +12,7 @@ export const getAllStudents = (id) => async (dispatch) => {
 
   try {
     const result = await axios.get(
-      `https://mernschoolmanagement.onrender.com/${id}`
+      `https://mernschoolmanagement.onrender.com/Students/${id}`
     );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));

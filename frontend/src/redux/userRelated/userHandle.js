@@ -81,7 +81,7 @@ export const deleteUser = (id, address) => async (dispatch) => {
 
   try {
     const result = await axios.delete(
-      `${process.env.REACT_APP_BASE_URL}/${address}/${id}`
+      `https://mernschoolmanagement.onrender.com/${address}/${id}`
     );
     if (result.data.message) {
       dispatch(getFailed(result.data.message));
@@ -103,7 +103,7 @@ export const updateUser = (fields, id, address) => async (dispatch) => {
 
   try {
     const result = await axios.put(
-      `http://localhost:5000/${address}/${id}`,
+      `https://mernschoolmanagement.onrender.com/${address}/${id}`,
       fields,
       {
         headers: { "Content-Type": "application/json" },

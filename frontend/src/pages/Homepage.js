@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Grid, Box, Button } from "@mui/material";
 import styled from "styled-components";
-import Students from "../assets/students.svg";
+// import Students from "../assets/students.svg";
 import { LightPurpleButton } from "../components/buttonStyles";
 import Boy from "../assets/schoolboy.jpg";
-import Teacher from "../assets/teacher.jpg";
+// import Teacher from "../assets/teacher.jpg";
 
 const Homepage = () => {
   return (
@@ -21,9 +21,9 @@ const Homepage = () => {
         <Grid item xs={12} md={6}>
           <StyledPaper elevation={3}>
             <StyledTitle>
-              Welcome to
+              Welcome to my
               <br />
-              School Management
+              <span style={{ color: "green" }}> School Management</span>
               <br />
               System
             </StyledTitle>
